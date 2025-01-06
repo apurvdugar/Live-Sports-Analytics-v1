@@ -422,7 +422,7 @@ html {
 
 ::-webkit-scrollbar-thumb {
     background: var(--accent-color);
-    border-radius: 5px;
+/*     border-radius: 5px; */
 }
 
 ::-webkit-scrollbar-thumb:hover {
