@@ -43,7 +43,7 @@ The **Live Sports Analytics Dashboard** is a dynamic web application providing r
 
 1. Clone the repository or download the files:
    ```bash
-   git clone https://github.com/your-repo/sports-analytics-dashboard.git
+         (https://github.com/apurvdugar/Live-Sports-Analytics-v1)
    ```
 2. Open `index.html` in your browser to launch the dashboard.
 
