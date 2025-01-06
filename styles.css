@@ -1,0 +1,501 @@
+/* General styles */
+:root {
+    --primary-color: #1a237e;
+    --secondary-color: #0d47a1;
+    --accent-color: #2962ff;
+    --background-color: #f5f7fa;
+    --card-background: #ffffff;
+    --text-primary: #1a237e;
+    --text-secondary: #546e7a;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    --border-radius: 16px;
+    --gradient: linear-gradient(135deg, #1a237e, #0d47a1);
+    --card-hover-shadow: 0 8px 16px rgba(41, 98, 255, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    padding-bottom: 60px; /* Space for fixed footer */
+}
+
+/* Header styles */
+header {
+    background: var(--gradient);
+    color: white;
+    padding: 2rem 1.5rem;
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+footer{
+    text-align: center;
+    background: var(--gradient);
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem;
+    font-size: 0.9rem;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    margin-top: 0.7rem;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+/* Sport selector styles */
+.sport-selector {
+    display: flex;
+    justify-content: center;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+}
+
+.sport-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 1rem 2rem;
+    color: white;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(5px);
+}
+
+.sport-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.sport-btn.active {
+    background: white;
+    color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Score cards styles */
+.live-scores {
+    max-width: 1300px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.live-scores h2 {
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.live-scores h2 i {
+    color: var(--accent-color);
+}
+
+.score-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.score-card {
+    background: var(--card-background);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.score-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--card-hover-shadow);
+    border-color: rgba(41, 98, 255, 0.1);
+}
+
+.score-card h3 {
+    color: var(--text-primary);
+    margin: 0 0 1.2rem 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.score {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin: 1rem 0;
+    padding: 0.5rem 0;
+    border-bottom: 2px solid rgba(41, 98, 255, 0.1);
+}
+
+.match-details {
+    margin-top: 1rem;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    overflow-y: auto; /* Enable scrolling on the modal overlay */
+    padding: 20px; /* Add padding to prevent content from touching edges */
+}
+
+.modal-content {
+    background: var(--card-background);
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    max-height: calc(100vh - 40px); /* Subtract padding from viewport height */
+    overflow-y: auto; /* Enable scrolling within modal content */
+}
+
+/* Ensure modal header stays in place */
+.modal-header {
+    background: var(--gradient);
+    padding: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.modal-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.match-status {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 500;
+    color: white;
+}
+
+.modal-body {
+    padding: 2rem;
+    padding-bottom: 4rem; /* Add extra padding at the bottom */
+}
+
+.close-btn {
+    position: sticky;
+    float: right;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    z-index: 11;
+}
+
+.close-btn:hover {
+    opacity: 1;
+}
+
+.team-stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.team-stats {
+    background: rgba(41, 98, 255, 0.03);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(41, 98, 255, 0.1);
+}
+
+.team-stats h3 {
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.stat-item {
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(41, 98, 255, 0.1);
+}
+
+.stat-label {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-value {
+    display: block;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.charts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2.5rem;
+}
+
+.chart-wrapper {
+    position: relative;
+    margin: 20px 0;
+    min-height: 300px;
+    width: 100%;
+}
+
+.chart-wrapper canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+.chart-wrapper:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Loading spinner */
+.loading-spinner {
+    text-align: center;
+    padding: 3rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(41, 98, 255, 0.1);
+    border-left-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error message */
+.error-message {
+    text-align: center;
+    padding: 3rem;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: var(--border-radius);
+    margin: 1rem;
+}
+
+.error-message button {
+    background: var(--accent-color);
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .live-scores {
+        padding: 0 1rem;
+        margin: 2rem auto;
+    }
+    
+    .score-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal {
+        padding: 10px;
+    }
+    
+    .modal-content {
+        margin: 10px auto;
+        max-height: calc(100vh - 20px);
+    }
+    
+    .chart-wrapper {
+        padding: 1rem;
+    }
+    
+    .stat-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-item {
+        padding: 0.8rem;
+    }
+    
+    .stat-value {
+        font-size: 1.1rem;
+    }
+} 
+
+/* Advanced Analytics Styles */
+.advanced-analytics {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.advanced-analytics h3 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    color: var(--text-primary);
+}
+
+.advanced-charts {
+    margin-bottom: 2rem;
+}
+
+.wicket-analysis {
+    margin-top: 2rem;
+}
+
+/* Add smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+} 
+
+/* Football-specific styles */
+.score-card.football {
+    position: relative;
+    overflow: hidden;
+}
+
+.score-card.football::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient);
+}
+
+.score-card.football .match-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Football Modal Enhancements */
+.modal-content.football .team-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.modal-content.football .stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background: rgba(41, 98, 255, 0.03);
+    border-radius: var(--border-radius);
+}
+
+.modal-content.football .stat-label {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.modal-content.football .stat-value {
+    font-weight: 600;
+    color: var(--accent-color);
+} 
+
+/* Sport-specific chart visibility */
+.cricket-chart, .football-chart, .basketball-chart {
+    display: none;
+}
+
+/* Show only cricket charts when cricket is selected */
+.modal-content[data-sport="cricket"] .cricket-chart {
+    display: block;
+}
+
+/* Show only football charts when football is selected */
+.modal-content[data-sport="football"] .football-chart {
+    display: block;
+}
+
+/* Show only basketball charts when basketball is selected */
+.modal-content[data-sport="basketball"] .basketball-chart {
+    display: block;
+} 
