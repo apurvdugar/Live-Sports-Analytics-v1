@@ -12,7 +12,7 @@ const API_URLS = {
 // State management
 let isLoading = true;
 let errorState = null;
-let selectedSport = 'cricket'; // default sport
+let selectedSport = 'cricket'; // Changed default from 'football' to 'cricket'
 let chartInstances = {
     playerChart: null,
     teamChart: null,
@@ -85,8 +85,8 @@ function addSportSelector() {
     const selector = document.createElement('div');
     selector.className = 'sport-selector';
     selector.innerHTML = `
-        <button class="sport-btn active" data-sport="football">Football</button>
-        <button class="sport-btn" data-sport="cricket">Cricket</button>
+        <button class="sport-btn active" data-sport="cricket">Cricket</button>
+        <button class="sport-btn" data-sport="football">Football</button>
         <button class="sport-btn" data-sport="basketball">Basketball</button>
     `;
     
