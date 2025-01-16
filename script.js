@@ -12,7 +12,7 @@ const API_URLS = {
 // State management
 let isLoading = true;
 let errorState = null;
-let selectedSport = 'football'; // default sport
+let selectedSport = 'cricket'; // default sport
 let chartInstances = {
     playerChart: null,
     teamChart: null,
