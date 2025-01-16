@@ -1,7 +1,7 @@
 // API configuration
-const FOOTBALL_API_KEY = '7d5804da74fc83e4221d99f4bf1b4c55';
+const FOOTBALL_API_KEY = 'e53d612e964eb22360abf4341bfff21b';
 const CRICKET_API_KEY = '8fe63192-6925-4e7f-b394-7e92d964983f'; // from cricapi.com
-const BASKETBALL_API_KEY = '7cb3cec02e46ae0a9e048bb55c77fdb7'; // from api-basketball.com
+const BASKETBALL_API_KEY = 'e53d612e964eb22360abf4341bfff21b'; 
 
 const API_URLS = {
     football: 'https://v3.football.api-sports.io',
